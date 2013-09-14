@@ -21,8 +21,9 @@ class TasksController < ApplicationController
 
   def stop
     seconds = Time.now -  @task.entries.last.created_at
-    @task.entries.last.hours  = seconds
-    if @task.save
+    @entry = @task.entries.last
+    @entry.hours  = seconds
+    if @entry.save
       format.js
     else
       format.js

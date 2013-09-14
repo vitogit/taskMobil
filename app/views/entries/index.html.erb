@@ -7,6 +7,8 @@
       <th>Date</th>
       <th>Category</th>
       <th>Comment</th>
+      <th>Task Name</th>
+
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +22,8 @@
         <td><%= entry.date %></td>
         <td><%= entry.category %></td>
         <td><%= entry.comment %></td>
+        <td><%= entry.task.name %></td>
+
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
