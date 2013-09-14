@@ -19,10 +19,10 @@
     <% @entries.each do |entry| %>
       <tr>
         <td><%= entry.hours %></td>
-        <td><%= entry.date %></td>
+        <td><%= entry.date.strftime("%d/%m/%Y %H:%M:%S") if entry.date %></td>
         <td><%= entry.category %></td>
         <td><%= entry.comment %></td>
-        <td><%= entry.task.name %></td>
+        <td><%= entry.task.name if entry.task %></td>
 
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>

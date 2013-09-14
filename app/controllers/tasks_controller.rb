@@ -22,12 +22,15 @@ class TasksController < ApplicationController
   def stop
     seconds = Time.now -  @task.entries.last.created_at
     @entry = @task.entries.last
-    @entry.hours  = seconds
-    if @entry.save
-      format.js
-    else
-      format.js
+    if @entry
+      @entry.hours  = seconds
+      @entry.date = Time.now()
+      if @entry.save
+        format.js
+      end
     end
+    format.js
+
   end
 
   # GET /tasks/1
