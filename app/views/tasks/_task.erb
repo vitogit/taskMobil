@@ -1,0 +1,18 @@
+<tr >
+  <td><%= task.name %></td>
+  <td id = "timer-<%=task.id %>"> 00:00:00 </td>
+  <!--<td>-->
+  <!--<% if task.status == 'closed' %>-->
+      <!--<span class="label label-danger"><%= task.status %> </span>-->
+      <!--<% else %>-->
+      <!--<span class="label label-success"><%= task.status %> </span>-->
+      <!--<% end %>-->
+
+  <!--</td>-->
+  <td>
+
+    <%= link_to 'Start', {:action => :start, :id => task.id}, :method => :post,:remote=>true, :class => "btn btn-xs btn-success "%>
+    <%= link_to 'Stop', {:action => :stop, :id => task.id}, :method => :post,:remote=>true, :onclick=>'stopTimer("timer-'+task.id.to_s+'")', :class => "btn btn-xs  btn-danger "%>
+    <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

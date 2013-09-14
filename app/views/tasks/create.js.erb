@@ -1,0 +1,12 @@
+<% if @task.errors.count == 0 %>
+
+$('#new_task').remove();
+$('#new_task_link').show();
+$('#tasks').append('<%= j render("task", :task => @task) %>');
+
+<% else %>
+
+$('.new_task').remove();
+$('#new_task_link').after('<%= j render("form") %>');
+
+<% end %>
