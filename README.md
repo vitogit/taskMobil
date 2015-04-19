@@ -1,6 +1,6 @@
 # Prototipo task manager app
 
-##Aplicacion prototipo para el registro de tareas con tiempo asociado.
+####Aplicacion prototipo para el registro de tareas con tiempo asociado.
 
 * Se tienen tasks y entries relacionadas
 * Las new task se crear en la misma pagina con ajax, al igual que el destroy
